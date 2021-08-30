@@ -1,0 +1,81 @@
+.Checkout {
+  display: flex;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+
+  transform: translateX(100%);
+  transition: transform .4s;
+
+  &_visible {
+    transform: translateX(0);
+  }
+}
+
+.Confirmation,
+.Payment {
+  background: #1f1d2b;
+  width: 400px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.Confirmation {
+  border-radius: 8px 0 0 8px;
+  border-right: 1px solid #393c49;
+}
+
+.PaymentMethodsSelect {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    background: #1f1d2b;
+    border: 1px solid #393c49;
+    border-radius: 8px;
+    padding: 10px 16px 16px 16px;
+    display: block;
+    width: 32%;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      background: #302d42;
+      border: 1px solid #4b4f5f;
+    }
+
+    &_active {
+      background: #252836;
+      border: 1px solid #abbbc2;
+    }
+
+    &__check {
+      display: none;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+
+    &_active &__check {
+      display: inline;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    span {
+      display: block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+    }
+  }
+}

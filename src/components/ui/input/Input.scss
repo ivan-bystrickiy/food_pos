@@ -1,0 +1,42 @@
+.Input {
+  display: block;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.4;
+
+  input {
+    width: 100%;
+  }
+
+  &.with-icon {
+    & > [class^="icon-"] {
+      position: absolute;
+      font-size: 19px;
+      left: 14px;
+      top: 14px;
+    }
+
+    .form-control {
+      padding-left: 42px;
+
+      &:focus + [class^="icon-"] {
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.form-control {
+  padding: 14px;
+  border-radius: 8px;
+  background: #2d303e;
+  color: #abbbc2;
+  border: 1px solid #393c49;
+  display: block;
+  color: #fff;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 15px rgba(#fff, 0.1);
+  }
+}

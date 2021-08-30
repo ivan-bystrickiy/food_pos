@@ -1,0 +1,59 @@
+// 1. Нет переменных
+// 2. Нет общей темы (переменная $theme)
+
+$theme-colors: (
+  "primary": #ea7c69,
+  "pink": #ff7ca3,
+);
+
+.btn {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  border: 1px solid transparent;
+
+  &.disbled, &:disabled {
+    opacity: 0.5;
+  }
+
+  &-block {
+    width: 100%;
+  }
+
+  &-lg {
+    padding: 14px 20px;
+  }
+
+  &-flat {
+    background: none !important;
+    border: none !important;
+  }
+}
+
+// Default
+@each $color, $value in $theme-colors {
+  .btn-default-#{$color} {
+    color: #fff;
+    background: $value;
+
+    &:hover {
+      background: darken($value, 5%);
+    }
+
+    &:active {
+      background: darken($value, 8%);
+    }
+  }
+}
+
+// Outline
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    color: $value;
+    background: none;
+    border: 1px solid #393c49;
+  }
+}
